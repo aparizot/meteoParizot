@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+MicroApp / MeteoCity
+{% endblock %}
+
+{% block body %}
+    <div id="container">
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>
+              Bonjour et merci de tester ce petit site Météo.<br>
+              Pour éviter tout désagrément lors de la recherche d'une ville, il est pré-rentré en base, au chargement de la page la première fois, une petite quantité de villes dans le but de la démonstration.<br>
+              De plus, l'API étant en anglais (ayant voulu varier de l'API google, pour une fois), le nom des villes et " l'état du ciel " le sont aussi.<br>
+              Bonne navigation !
+            </p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col s10 offset-s1">
+            <table class="striped centered">
+                <thead>
+                  <tr>
+                      <th>Villes référencées en base</th>
+                      <th>Accéder à la météo actuelle</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                    {% for city in cities %}
+                        <tr>
+                        <td><p>{{ city.city }} </p></td>
+                        <td><a href="{{ path( 'meteoCity', { 'name': city.city } ) }}"> Cliquez ici </a></td>
+                        </tr>
+                    {% endfor %}                  
+                </tbody>
+              </table>
+            
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+</style>
+{% endblock %}

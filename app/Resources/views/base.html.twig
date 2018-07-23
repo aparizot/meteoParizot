@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} Par Alexandre Parizot</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

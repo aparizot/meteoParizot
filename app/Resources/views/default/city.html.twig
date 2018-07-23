@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ meteoCity.name }} / MeteoCity
+{% endblock %}
+
+{% block body %}
+    <div id="container">
+        <div class="row">
+            <div class="col s10 offset-s1">
+
+			  <div class="section">
+			    <h5>{{ meteoCity.name }}</h5>
+			    <p>Météo actuelle</p>
+			  </div>
+			  <div class="divider"></div>
+			  <div class="section">
+			    <h5>Température approximative : {{ meteoCity.main.temp }}°</h5>
+			  </div>
+			  <div class="divider"></div>
+			  <div class="section">
+			    
+			    <h5>Ciel : {{ meteoCity.weather[0].description }}</h5>
+			  </div>
+			  <div class="divider"></div>
+			  <div class="section">
+			    <h6> Humidité de l'air : {{ meteoCity.main.humidity }}% </h6>
+				<h6> Force du vent : {{ meteoCity.wind.speed }} km/h </h6>
+				<h6>Précipitations : {{ meteoCity.clouds.all }}%</h6>
+			  </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
